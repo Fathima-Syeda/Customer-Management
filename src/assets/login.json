@@ -1,0 +1,16 @@
+[{
+        "userName": "skinnermay@frosnex.com",
+        "password": "User@123",
+        "isAdmin": false
+    },
+    {
+        "userName": "margaretpatrick@remotion.com",
+        "password": "Admin@123",
+        "isAdmin": true
+    },
+    {
+        "userName": "buchananbeach@genmom.com",
+        "password": "User2@123",
+        "isAdmin": false
+    }
+]

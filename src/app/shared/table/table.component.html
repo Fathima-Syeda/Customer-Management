@@ -1,0 +1,20 @@
+<div class="">
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    <div style="height: 400px; overflow: auto;">
+        <table mat-table [dataSource]="dataSource" matSort style="width: 100%;" class="border">
+            <ng-container *ngFor="let col of displayedColumns" matColumnDef="{{ col.columnDef }}">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ col.header }}</th>
+                <td mat-cell *matCellDef="let row" (click)="rowSelection(row)">
+                    <div>
+                        <div>{{ (row[col.columnDef])}}</div>
+                    </div>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="dataCols; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: dataCols;"></tr>
+        </table>
+    </div>
+    <mat-paginator [length]="totalRecords" [pageSize]="10" [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+</div>

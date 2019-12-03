@@ -1,0 +1,29 @@
+<div class="p-2">
+    <div style="width: 100%;
+    display: flex;
+    justify-content: space-between;" class="p-2">
+        <h1 class="">Contact Management</h1>
+        <span class="m-1"><button type="button" class="btn btn-primary" (click)="logOut()">Log Out</button></span>
+    </div>
+    <div class="row">
+        <div class="col border m-2">
+            <div class="card text-center m-2">
+                <div class="card-header">
+                    User List
+                </div>
+            </div>
+            <div class="float-right">
+                <button type="button" class="btn btn-primary" (click)="addNew()" id="addNew">Add New</button>
+            </div>
+            <app-table [displayedColumns]="data" [tableData]="tableData" (pageEvent)="paginator($event)"></app-table>
+        </div>
+        <div class="col-4 border m-2" id="userDetailsForm">
+            <div class="card text-center m-2">
+                <div class="card-header">
+                    User Details
+                </div>
+            </div>
+            <app-user-details [tableData]=tableData></app-user-details>
+        </div>
+    </div>
+</div>
